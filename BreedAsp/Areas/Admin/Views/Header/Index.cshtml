@@ -1,0 +1,33 @@
+﻿@model List<Header>
+<table class="table table-bordered table-striped" >
+    <thead class="thead-dark">
+        <tr>
+            <th>#</th>
+            <th>Subheader</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+   <tbody>
+       @foreach (var item in Model)
+       {
+           <tr>
+               <td>
+                   <a class="btn btn-warning" href="/Admin/Header/Edit/@item.Id">Edit</a>
+
+               </td>
+               <td>@item.Subheader</td>
+               <td>@item.Name</td>
+               <td>@item.Description</td>
+               <td>
+                   <img src="~/@item.ImageUrl" alt="Alternate Text" />
+               </td>
+
+
+
+               </tr>
+
+       }
+   </tbody>
+</table>
